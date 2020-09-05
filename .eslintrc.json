@@ -10,5 +10,9 @@
     "ecmaVersion": 10
   },
   "plugins": ["@typescript-eslint", "jest"],
-  "rules": {}
+  "rules": {
+    "@typescript-eslint/strict-boolean-expression": "off",
+    "@typescript-eslint/consistent-type-definitions": "off",
+    "@typescript-eslint/comma-spacing": "off",
+  }
 }
