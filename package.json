@@ -16,5 +16,8 @@
   "bugs": {
     "url": "https://github.com/SandroReis/TDD-Nodejs-API/issues"
   },
-  "homepage": "https://github.com/SandroReis/TDD-Nodejs-API#readme"
+  "homepage": "https://github.com/SandroReis/TDD-Nodejs-API#readme",
+  "devDependencies": {
+    "git-commit-msg-linter": "^2.6.0"
+  }
 }
