@@ -1,7 +1,8 @@
 import {
   Encrypter,
   AddAccountModel,
-  AccountModel, AddAccountRepository
+  AccountModel,
+  AddAccountRepository
 } from './db-add-account-protocols'
 import { DbAddAccount } from './db-add-account'
 
@@ -99,5 +100,21 @@ describe('DbAddAccount usecases', () => {
     }
     const promise = sut.add(accountData)
     expect(promise).rejects.toThrow()
+  })
+
+  test('should returns an account on success', async () => {
+    const { sut } = makeSut()
+    const accountData = {
+      name: 'valid_name',
+      email: 'valid_email',
+      password: 'valid_password'
+    }
+    const account = await sut.add(accountData)
+    expect(account).toEqual({
+      id: 'valid_id',
+      name: 'valid_name',
+      email: 'valid_email',
+      password: 'hashed_password'
+    })
   })
 })
